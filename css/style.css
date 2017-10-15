@@ -1,0 +1,41 @@
+* {
+    color: black;
+    font-size: 16px;
+    font-family: "Lato", 'sans-serif';
+}
+
+body {
+    background-color: #fefefe;
+}
+
+#app {
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.counter {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.counter__title {
+    font-size: 24px;
+    line-height: 3em;
+}
+.counter__display {
+    width: 100%;
+    height: 200px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter__button {
+    margin: 30px auto;
+}
