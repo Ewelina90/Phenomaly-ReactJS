@@ -1,4 +1,5 @@
 import React from 'react';
+import {InputFile} from './InputFile.jsx'
 
 export class Upload extends React.Component {
 
@@ -37,7 +38,7 @@ export class Upload extends React.Component {
         img.src = imageSrc;
     }
 
-    handleUploadPicture = (FileList) => {
+    handleUploadFile = (FileList) => {
         const input = FileList[0];
         let imageSrc, imgDimensions;
         const fileSize = this.formatFileSize(input.size);
@@ -83,11 +84,7 @@ export class Upload extends React.Component {
 
                     </div>
                 </div>
-                <input
-                    type="file"
-                    className="upload__input"
-                    onChange={(e) => this.handleUploadPicture(e.target.files)}>
-                </input>
+                <InputFile upload={this.handleUploadFile} />
             </section>
         )
     }
