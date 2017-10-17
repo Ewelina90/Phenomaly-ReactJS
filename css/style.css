@@ -17,16 +17,19 @@ body {
     margin: 0 auto;
 }
 
-.counter {
+.counter, .upload {
     width: 50%;
     margin: 0 auto;
     text-align: center;
 }
 
-.counter__title {
+.counter__title, .upload__title {
     font-size: 24px;
     line-height: 3em;
 }
+
+/* Style - Counter component*/
+
 .counter__display {
     width: 100%;
     height: 200px;
@@ -39,3 +42,23 @@ body {
 .counter__button {
     margin: 30px auto;
 }
+
+/* Style - Upload component*/
+
+.upload__row {
+    display: flex;
+    flex-direction: row;
+}
+.upload__preview {
+
+}
+
+.upload__preview__image {
+    width: 150px;
+    margin: 20px;
+
+}
+
+ .upload__data {
+    padding: 20px;
+ }
