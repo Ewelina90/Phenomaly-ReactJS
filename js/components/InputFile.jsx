@@ -15,10 +15,10 @@ export class InputFile extends React.Component {
 
     render() {
         return (
-            <span>
-                <span className="inputfile">{this.props.fileName}</span>{/*
+            <div className="inputfile">
+                <span className="inputfile__filename">{this.props.fileName}</span>{/*
                 */}<button
-                    className="btn"
+                    className="inputfile__btn"
                     onClick={this.triggerOnClick}>
                     <i className="fa fa-folder-open" aria-hidden="true"></i>
                     Open
@@ -27,11 +27,10 @@ export class InputFile extends React.Component {
                 <input
                     style={{opacity: '0', width: '1px'}}
                     type="file"
-                    className="upload__input"
                     ref="upload"
                     onChange={(e) => this.handleUpload(e.target.files)}>
                 </input>
-            </span>
+            </div>
         )
     }
 }

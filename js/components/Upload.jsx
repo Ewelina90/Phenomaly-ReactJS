@@ -67,13 +67,15 @@ export class Upload extends React.Component {
     }
 
     render() {
+        let previewPicture = this.state.imgSrc !== '' ?
+        <div className="upload__preview">
+            <img className="upload__preview__image" src={this.state.imgSrc}></img>
+        </div> : null ;
         return (
             <section className="upload">
-                <h1 className="upload__title">Upload</h1>
+                <h1 className="upload__title">UPLOAD A FILE</h1>
                 <div className="upload__row">
-                    <div className="upload__preview">
-                        <img className="upload__preview__image" src={this.state.imgSrc}></img>
-                    </div>
+                    {previewPicture}
                     <div className="upload__data">
                         <ul>
                             <li>{this.state.fileName}</li>
