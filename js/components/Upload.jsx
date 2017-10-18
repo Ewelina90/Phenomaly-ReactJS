@@ -84,7 +84,7 @@ export class Upload extends React.Component {
 
                     </div>
                 </div>
-                <InputFile upload={this.handleUploadFile} />
+                <InputFile upload={this.handleUploadFile} fileName={this.state.fileName}/>
             </section>
         )
     }
