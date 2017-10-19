@@ -27,6 +27,7 @@ body {
 .counter__title, .upload__title {
     font-size: 24px;
     line-height: 3em;
+    letter-spacing: 2px;
 }
 
 /* Style - Counter component*/
@@ -47,23 +48,32 @@ body {
 
 /* Style - Upload component*/
 
+.upload {
+    background-color: #f7f7f7;
+}
 .upload__row {
     display: flex;
     flex-direction: row;
-    background-color: #f7f7f7;
+    background-color: #f9f9f9;
     justify-content: center;
-}
-.upload__preview {
-
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
 }
 
 .upload__preview__image {
     width: 150px;
-    margin: 20px;
+    margin: 15px;
 }
 
  .upload__data {
-    padding: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+ }
+
+ .list_item {
+     color: #555;
+     line-height: 1.8em;
  }
 
 .inputfile {
@@ -76,14 +86,12 @@ body {
     width: 70%;
     min-width: 200px;
     max-width: 500px;
-    background-color: lightgray;
     border-radius: 3px 0 0 3px;
     height: 34px;
-    border: 1px solid gray;
     margin: 0;
     padding: 6px 12px;
     font-size: 14px;
-    line-height: 1.42857143;
+    line-height: 1.4;
     color: #555;
     background-color: #eeeeee;
     background-image: none;

@@ -68,27 +68,30 @@ export class Upload extends React.Component {
 
     render() {
         let previewPicture = this.state.imgSrc !== '' ?
-            <div className="upload__preview">
+            <div>
                 <img className="upload__preview__image" src={this.state.imgSrc}></img>
             </div> : null ;
 
         let fileDescprition = Object.values(this.state).filter((el, index) => {
                 return ( (el !== '') && (index !== 0) );
             }).map((el, index) => {
-                return <li key={index}>{el}</li>;
+                return <li className="list_item" key={index}>{el}</li>;
             });
+
+        let uploadRow = this.state.fileName !== '' ?
+            <div className="upload__row">
+                {previewPicture}
+                <div className="upload__data">
+                    <ul>
+                        {fileDescprition}
+                    </ul>
+                </div>
+            </div> : null ;
 
         return (
             <section className="upload">
                 <h1 className="upload__title">UPLOAD A FILE</h1>
-                <div className="upload__row">
-                    {previewPicture}
-                    <div className="upload__data">
-                        <ul>
-                            {fileDescprition}
-                        </ul>
-                    </div>
-                </div>
+                    {uploadRow}
                 <InputFile upload={this.handleUploadFile} fileName={this.state.fileName}/>
             </section>
         )

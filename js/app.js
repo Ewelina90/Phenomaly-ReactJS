@@ -9812,7 +9812,7 @@ var Upload = exports.Upload = function (_React$Component) {
         value: function render() {
             var previewPicture = this.state.imgSrc !== '' ? _react2.default.createElement(
                 'div',
-                { className: 'upload__preview' },
+                null,
                 _react2.default.createElement('img', { className: 'upload__preview__image', src: this.state.imgSrc })
             ) : null;
 
@@ -9821,10 +9821,25 @@ var Upload = exports.Upload = function (_React$Component) {
             }).map(function (el, index) {
                 return _react2.default.createElement(
                     'li',
-                    { key: index },
+                    { className: 'list_item', key: index },
                     el
                 );
             });
+
+            var uploadRow = this.state.fileName !== '' ? _react2.default.createElement(
+                'div',
+                { className: 'upload__row' },
+                previewPicture,
+                _react2.default.createElement(
+                    'div',
+                    { className: 'upload__data' },
+                    _react2.default.createElement(
+                        'ul',
+                        null,
+                        fileDescprition
+                    )
+                )
+            ) : null;
 
             return _react2.default.createElement(
                 'section',
@@ -9834,20 +9849,7 @@ var Upload = exports.Upload = function (_React$Component) {
                     { className: 'upload__title' },
                     'UPLOAD A FILE'
                 ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'upload__row' },
-                    previewPicture,
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'upload__data' },
-                        _react2.default.createElement(
-                            'ul',
-                            null,
-                            fileDescprition
-                        )
-                    )
-                ),
+                uploadRow,
                 _react2.default.createElement(_InputFile.InputFile, { upload: this.handleUploadFile, fileName: this.state.fileName })
             );
         }
