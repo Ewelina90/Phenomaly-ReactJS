@@ -45,7 +45,7 @@ export class Counter extends React.Component {
 
         return (
             <section className="counter">
-                <h1 className="counter__title">Counter</h1>
+                <h1 className="counter__title">COUNTER</h1>
                 <div
                     className="counter__display"
                     style={{color: this.state.textColor}}>

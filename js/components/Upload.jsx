@@ -68,9 +68,16 @@ export class Upload extends React.Component {
 
     render() {
         let previewPicture = this.state.imgSrc !== '' ?
-        <div className="upload__preview">
-            <img className="upload__preview__image" src={this.state.imgSrc}></img>
-        </div> : null ;
+            <div className="upload__preview">
+                <img className="upload__preview__image" src={this.state.imgSrc}></img>
+            </div> : null ;
+
+        let fileDescprition = Object.values(this.state).filter((el, index) => {
+                return ( (el !== '') && (index !== 0) );
+            }).map((el, index) => {
+                return <li key={index}>{el}</li>;
+            });
+
         return (
             <section className="upload">
                 <h1 className="upload__title">UPLOAD A FILE</h1>
@@ -78,12 +85,8 @@ export class Upload extends React.Component {
                     {previewPicture}
                     <div className="upload__data">
                         <ul>
-                            <li>{this.state.fileName}</li>
-                            <li>{this.state.fileSize}</li>
-                            <li>{this.state.fileType}</li>
-                            <li>{this.state.imgDimensions}</li>
+                            {fileDescprition}
                         </ul>
-
                     </div>
                 </div>
                 <InputFile upload={this.handleUploadFile} fileName={this.state.fileName}/>

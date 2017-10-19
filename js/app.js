@@ -9685,7 +9685,7 @@ var Counter = exports.Counter = function (_React$Component) {
                 _react2.default.createElement(
                     'h1',
                     { className: 'counter__title' },
-                    'Counter'
+                    'COUNTER'
                 ),
                 _react2.default.createElement(
                     'div',
@@ -9815,6 +9815,17 @@ var Upload = exports.Upload = function (_React$Component) {
                 { className: 'upload__preview' },
                 _react2.default.createElement('img', { className: 'upload__preview__image', src: this.state.imgSrc })
             ) : null;
+
+            var fileDescprition = Object.values(this.state).filter(function (el, index) {
+                return el !== '' && index !== 0;
+            }).map(function (el, index) {
+                return _react2.default.createElement(
+                    'li',
+                    { key: index },
+                    el
+                );
+            });
+
             return _react2.default.createElement(
                 'section',
                 { className: 'upload' },
@@ -9833,26 +9844,7 @@ var Upload = exports.Upload = function (_React$Component) {
                         _react2.default.createElement(
                             'ul',
                             null,
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                this.state.fileName
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                this.state.fileSize
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                this.state.fileType
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                null,
-                                this.state.imgDimensions
-                            )
+                            fileDescprition
                         )
                     )
                 ),
